@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('sbadmin_pages.blank');
+    return view('layouts.master_layout');
 });
