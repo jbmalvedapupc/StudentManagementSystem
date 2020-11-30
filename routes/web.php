@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DashboardController@index')->name('dashboard.index');
 // Student Module
+Route::get('/students', 'StudentController@index')->name('students.index');
 Route::get('/students/create', 'StudentController@create')->name('students.create');
