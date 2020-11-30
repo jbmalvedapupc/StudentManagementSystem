@@ -9,6 +9,6 @@ class StudentController extends Controller
     public function create()
     {
         $sections = ['Section 1', 'Section 2', 'Section 3'];
-        return view('student.create', compact('sections'));
+        return view('students.create', compact('sections'));
     }
 }
