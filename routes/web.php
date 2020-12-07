@@ -17,3 +17,7 @@ Route::get('/', 'DashboardController@index')->name('dashboard.index');
 // Student Module
 Route::get('/students', 'StudentController@index')->name('students.index');
 Route::get('/students/create', 'StudentController@create')->name('students.create');
+
+// Section Module
+Route::get('/sections', 'SectionController@index')->name('sections.index');
+
