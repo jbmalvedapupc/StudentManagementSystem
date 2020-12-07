@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Section;
 
 class SectionController extends Controller
 {
     public function index()
     {
-        return view('sections.index');
+        $sections = Section::all();
+        return view('sections.index', compact('sections'));
     }
 }

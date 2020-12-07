@@ -37,22 +37,16 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($sections as $section)
                         <tr>
-                            <td>3</td>
-                            <td>Section 01</td>
+                            <td>{{ $section->id }}</td>
+                            <td>{{ $section->section_name }}</td>
                             <td>50</td>
                             <td>
                                 <a class="btn btn-sm btn-primary" href="#">View</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Section 02</td>
-                            <td>30</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="#">View</a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
