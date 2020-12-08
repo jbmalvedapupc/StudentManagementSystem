@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Student;
 class StudentController extends Controller
 {
     public function index()
     {
-        return view('students.index');
+        $students = Student::with('section')->get();
+        return view('students.index', compact('students'));
     }
 
     public function create()

@@ -25,26 +25,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>3</td>
-                            <td>Tamad</td>
-                            <td>Juan</td>
-                            <td>Xavier</td>
-                            <td>Section 01</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="#">View</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Magic</td>
-                            <td>Mina</td>
-                            <td>Gertrud</td>
-                            <td>Section 02</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="#">View</a>
-                            </td>
-                        </tr>
+                        @foreach($students as $student)
+                            <tr>
+                                <td>{{ $student->id }}</td>
+                                <td>{{ $student->last_name }}</td>
+                                <td>{{ $student->first_name }}</td>
+                                <td>{{ $student->middle_name }}</td>
+                                <td>{{ $student->section->section_name }}</td>
+                                <td>
+                                    <a class="btn btn-sm btn-primary" href="#">View</a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
