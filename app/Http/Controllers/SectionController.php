@@ -9,7 +9,7 @@ class SectionController extends Controller
 {
     public function index()
     {
-        $sections = Section::all();
+        $sections = Section::with('students')->get();
         return view('sections.index', compact('sections'));
     }
 }

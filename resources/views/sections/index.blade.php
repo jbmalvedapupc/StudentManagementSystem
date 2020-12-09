@@ -41,7 +41,7 @@
                         <tr>
                             <td>{{ $section->id }}</td>
                             <td>{{ $section->section_name }}</td>
-                            <td>50</td>
+                            <td>{{ $section->students->count() }}</td>
                             <td>
                                 <a class="btn btn-sm btn-primary" href="#">View</a>
                             </td>

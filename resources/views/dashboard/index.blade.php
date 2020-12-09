@@ -15,7 +15,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Students</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">1,500</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $studentCount }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-users fa-3x text-gray-300"></i>
@@ -34,7 +34,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Sections</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $sectionCount }}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-object-ungroup fa-3x text-gray-300"></i>
