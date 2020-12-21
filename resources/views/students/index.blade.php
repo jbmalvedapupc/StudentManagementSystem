@@ -9,7 +9,16 @@
     <h1 class="h3 mb-4 text-gray-800">Search Student</h1>
     {{-- /Page Heading --}}
     
-    
+    @if(Session::has('success'))
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            </div>
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
