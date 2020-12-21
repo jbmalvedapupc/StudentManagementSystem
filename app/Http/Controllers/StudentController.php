@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Student;
 use App\Section;
+use App\Http\Requests\NewStudentRequest;
+
 class StudentController extends Controller
 {
     public function index()
@@ -19,7 +21,7 @@ class StudentController extends Controller
         return view('students.create', compact('sections'));
     }
 
-    public function store(Request $request)
+    public function store(NewStudentRequest $request)
     {
         Student::create(
             $request->all()
