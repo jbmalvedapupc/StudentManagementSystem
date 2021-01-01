@@ -6,7 +6,7 @@
 
 @section('content')
     {{-- Page Heading --}}
-    <h1 class="h3 mb-4 text-gray-800">Sections</h1>
+    <h1 class="h3 mb-4 text-gray-800">{{ $section->section_name }}</h1>
     {{-- /Page Heading --}}
     
     @if(Session::has('success'))
@@ -19,7 +19,7 @@
         </div>
     @endif
     
-        {{-- Error Messages --}}
+    {{-- Error Messages --}}
     @if($errors->any())
         <div class="row">
             <div class="col-12">
@@ -32,45 +32,32 @@
                 </div>
             </div>
         </div>
-    @endif
-
-    <div class="row">
-        <div class="col-12">
-            <form action="{{ route('sections.store') }}" method="post">
-                @csrf
-                <div class="form-group col-12">
-                    <input class="form-control" type="text" placeholder="Section Name" name="section_name">
-                </div>
-                <div class="form-group col-4">
-                    <button class="btn btn-primary" type="submit">Add Section</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <hr>    
+    @endif 
 
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
-                <table class="table table-bordered" id="section-table">
+                <table class="table table-bordered" id="student-table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Section Name</th>
-                            <th>Number of Students</th>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($sections as $section)
-                        <tr>
-                            <td>{{ $section->id }}</td>
-                            <td>{{ $section->section_name }}</td>
-                            <td>{{ $section->students->count() }}</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="{{ route('sections.show', $section) }}">View</a>
-                            </td>
-                        </tr>
+                        @foreach($section->students as $student)
+                            <tr>
+                                <td>{{ $student->id }}</td>
+                                <td>{{ $student->last_name }}</td>
+                                <td>{{ $student->first_name }}</td>
+                                <td>{{ $student->middle_name }}</td>
+                                <td>
+                                    <a class="btn btn-sm btn-primary" href="#">View</a>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -88,7 +75,7 @@
     <script>
         // Call the dataTables jQuery plugin
         $(document).ready(function() {
-            $('#section-table').DataTable();
+            $('#student-table').DataTable();
         });
     </script>
 @endsection

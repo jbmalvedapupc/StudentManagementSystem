@@ -21,4 +21,10 @@ class SectionController extends Controller
         );
         return redirect()->route('sections.index')->with('success', 'Section added successfully.');
     }
+
+    public function show(Section $section)
+    {
+        $section = $section->with('students')->findOrFail($section->id);
+        return view('sections.show', compact('section'));
+    }
 }
