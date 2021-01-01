@@ -9,12 +9,22 @@
     <h1 class="h3 mb-4 text-gray-800">Sections</h1>
     {{-- /Page Heading --}}
     
+    @if(Session::has('success'))
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+            </div>
+        </div>
+    @endif
+    
     <div class="row">
         <div class="col-12">
-            <form action="#" method="post">
+            <form action="{{ route('sections.store') }}" method="post">
                 @csrf
                 <div class="form-group col-12">
-                    <input class="form-control" type="text" placeholder="Section Name">
+                    <input class="form-control" type="text" placeholder="Section Name" name="section_name">
                 </div>
                 <div class="form-group col-4">
                     <button class="btn btn-primary" type="submit">Add Section</button>

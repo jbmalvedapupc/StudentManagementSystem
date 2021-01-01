@@ -12,4 +12,12 @@ class SectionController extends Controller
         $sections = Section::with('students')->get();
         return view('sections.index', compact('sections'));
     }
+
+    public function store(Request $request) 
+    {
+        Section::create(
+            $request->all()
+        );
+        return redirect()->route('sections.index')->with('success', 'Section added successfully.');
+    }
 }

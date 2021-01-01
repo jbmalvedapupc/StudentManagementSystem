@@ -21,4 +21,5 @@ Route::post('/students', 'StudentController@store')->name('students.store');
 
 // Section Module
 Route::get('/sections', 'SectionController@index')->name('sections.index');
+Route::post('/sections', 'SectionController@store')->name('sections.store');
 
