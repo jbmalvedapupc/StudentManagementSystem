@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewSectionRequest;
 use Illuminate\Http\Request;
 use App\Section;
 
@@ -13,7 +14,7 @@ class SectionController extends Controller
         return view('sections.index', compact('sections'));
     }
 
-    public function store(Request $request) 
+    public function store(NewSectionRequest $request) 
     {
         Section::create(
             $request->all()
